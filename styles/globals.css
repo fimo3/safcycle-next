@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Roboto Condensed */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+/* -------------------------
+   Light Mode Variables (Default)
+------------------------- */
+:root {
+  --color-primary: #96d953;
+  --color-secondary: #efefe5;
+  
+  --color-bg: var(--color-secondary);
+  --color-text: #000000;
+  
+  --color-link: var(--color-primary);
+  --color-button-bg: var(--color-primary);
+  --color-button-text: #ffffff;
+}
+
+/* -------------------------
+   Dark Mode Overrides
+------------------------- */
+.dark {
+  --color-primary: #2e5e2f;
+  --color-secondary: #2e2e2e;
+  
+  --color-bg: var(--color-secondary);
+  --color-text: #ffffff;
+  
+  --color-link: var(--color-primary);
+  --color-button-bg: var(--color-primary);
+  --color-button-text: #ffffff;
+}
+
+/* -------------------------
+   Global Styles
+------------------------- */
+html, body {
+  @apply bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.App {
+  @apply bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300;
+}
+
+/* -------------------------
+    Text Sizes
+------------------------- */
+h1 {
+  @apply text-4xl text-[var(--color-primary)] underline underline-offset-4 decoration-wavy pb-2;
+}
+h2 {
+  @apply text-3xl;
+}
+h3 {
+  @apply text-2xl;
+}
+h4 {
+  @apply text-xl;
+}
+p {
+  @apply text-lg;
+}
+
+/* -------------------------
+   Layout: Home Page Flexbox
+------------------------- */
+.flex-justify-center {
+  @apply flex p-2;
+}
+.map {
+  @apply flex-1 overflow-hidden rounded-lg;
+}
+.map-container {
+  @apply rounded-lg;
+}
+
+.aside-home-page {
+  @apply flex w-2/5 mr-5;
+}
+
+/* -------------------------
+   Navigation Styles
+------------------------- */
+.App-header {
+  @apply bg-[var(--color-primary)] p-3;
+}
+
+nav .navul {
+  @apply flex items-center justify-around list-none p-0 m-0;
+}
+
+.navul li a {
+  @apply text-[var(--color-button-text)] no-underline text-base transition-colors duration-300 hover:text-[var(--color-button-text)];
+}
+
+.flex-center {
+  @apply flex justify-around;
+}
+.brandlogos {
+  @apply flex justify-start;
+}
+.header {
+  @apply flex justify-between items-center max-w-[50%];
+}
+
+/* -------------------------
+   Button Styles
+------------------------- */
+button, .button {
+  @apply bg-[var(--color-button-bg)] text-[var(--color-button-text)] rounded-lg px-5 py-2 text-base font-bold transition-transform duration-200 hover:scale-105;
+}
+
+/* -------------------------
+   Profile & Auth Styles
+------------------------- */
+.small-avatar {
+  @apply rounded-full;
+}
+.flex-container {
+  @apply flex items-center;
+}
+.padding-left-12px {
+  @apply pl-3;
+}
+
+/* -------------------------
+   Routes & Page Content
+------------------------- */
+.route-pane {
+  @apply bg-[var(--color-bg)] rounded-lg p-5 mt-5;
+}
+
+/* -------------------------
+   Responsive Adjustments
+------------------------- */
+@media (max-width: 768px) {
+  .flex-justify-center {
+    @apply flex-col;
+  }
+  .map {
+    @apply w-full h-auto;
+  }
+  .aside-home-page {
+    @apply w-full mr-0 items-center;
+  }
+}
+
+/* -------------------------
+   Input Component Styling
+------------------------- */
+.input-container {
+  @apply flex items-center rounded-lg overflow-hidden bg-[var(--color-secondary)] p-2;
+}
+
+.input {
+  @apply flex-1 p-3 border-none outline-none text-base bg-transparent text-[var(--color-text)] border-b-2 border-[var(--color-primary)] transition-colors duration-300 focus:border-[var(--color-secondary)];
+}
+
+.input-icon {
+  @apply mr-3 text-[var(--color-primary)] text-lg;
+}
+
+.suggestions {
+  @apply list-none bg-[var(--color-bg)] rounded-lg p-3 absolute shadow-lg;
+}
+
+.suggestions li {
+  @apply p-2 cursor-pointer transition-colors duration-200 rounded-lg hover:bg-[var(--color-primary)] hover:text-white;
+}
+
+/* -------------------------
+   Homepage & Fixed Map Layout
+------------------------- */
+.homepage-container {
+  @apply flex p-3;
+}
+
+.fixed-map {
+  @apply fixed top-[80px] right-4 w-1/2 max-h-[calc(100%-75px)] z-50;
+}
+.logo {
+  max-width: 50%;
+  border-radius: 30%;
+}
+/* -------------------------
+   Directions Info Pane Styles
+------------------------- */
+.directions-info-pane {
+  @apply p-5 bg-[var(--color-bg)] text-[var(--color-text)] rounded-lg shadow-md max-w-2xl mx-auto;
+}
+
+.directions-info-pane .switcher {
+  @apply flex justify-center gap-3 mb-5;
+}
+.directions-info-pane .switcher button {
+  @apply bg-[var(--color-button-bg)] text-[var(--color-button-text)] rounded-lg px-4 py-2 text-base font-bold transition-colors duration-300 hover:bg-green-700;
+}
+
+.directions-info-pane .routes-container {
+  @apply mb-5;
+}
+.directions-info-pane .routes-title {
+  @apply text-xl mb-3 text-center;
+}
+.directions-info-pane .routes-card {
+  @apply rounded-lg p-4 mb-4 bg-white text-[var(--color-text)] shadow-md;
+}
+.directions-info-pane .route-info {
+  @apply text-sm mb-2;
+}
+.directions-info-pane .route-info p {
+  @apply flex items-center gap-2 m-0;
+}
+.directions-info-pane .weather-info {
+  @apply text-sm mt-2 leading-5;
+}
+
+/* -------------------------
+   Responsive Adjustments for Directions Pane
+------------------------- */
+@media (max-width: 600px) {
+  .directions-info-pane {
+    @apply p-4 mx-2;
+  }
+  
+  .directions-info-pane .switcher {
+    @apply flex-col gap-2;
+  }
+}
