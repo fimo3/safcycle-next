@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **Онлайн приложение за велосипеди и пешеходци SAFCYCLE**
 
-## Getting Started
+## **Описание на проекта**
 
-First, run the development server:
+Това е онлайн приложение, предназначено за велосипедисти и пешеходци, което предлага маршрути, базирани на разстояние, време и метеорологични условия. Приложението предоставя подробна карта с възможности за избор на най-добрия маршрут, като се вземат предвид фактори като време, асфалтови пътища и сезонни условия.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **Основни функционалности**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Избор на маршрути** въз основа на разстояние, време и метеорологични условия.
+- **Превключване между режим на ходене и колоездене.**
+- **Изчисляване на изгорени калории** и еквивалент в "бургери".
+- **Поддръжка на тъмна и светла тема.**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## **Използвани технологии**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend**: React.js, CSS
+- **Картографиране**: Leaflet
+- **API услуги**: GraphHopper API (маршрутизация), OpenWeather API (метеорологични данни)
+- **Икони**: Font Awesome
 
-## Learn More
+## **Инсталация и стартиране**
 
-To learn more about Next.js, take a look at the following resources:
+За да стартирате проекта на локална машина, следвайте следните стъпки:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Инсталирайте необходимите зависимости:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+2. Стартирайте приложението:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm start
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Отворете http://localhost:3000, за да видите приложението в браузъра си.
+
+## Използване на приложението
+
+- В основното меню на приложението, потребителите могат да избират между различни режими на колоездене и ходене.
+- При въвеждане на начална и крайна точка, приложението ще предложи най-добрите маршрути.
+- Възможност за разглеждане на алтернативни маршрути и визуализация на времето по време на пътуването.
+
+## Калории и еквивалент в бургери
+
+Приложението разполага с компонент за калории, който показва изгорените калории и техния еквивалент в "бургери". Това е представено чрез следните формули:
+
+- Изгаряне на калории на км: 45 калории
+- Калории на един бургер: 300 калории
+
+## Поддръжка и бъдещи подобрения
+
+В бъдеще приложението ще бъде разширено с функции като:
+
+- Запаване на любими маршрути.
+- Добавяне на различни обекти от потребителите.
+- Замърсеност на въздуха.
+- История на маршрутите и проследяване на изминатите разстояния.
+- Система за оценяване на маршрутите от потребителите.
